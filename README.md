@@ -28,6 +28,7 @@ you will get three Folders as Downloaded
 - python_script
 
 ### 2. Install dependencies of frontend
+
 ```
 cd .\news_prediction_app\
 ```
@@ -62,3 +63,17 @@ after running above command all the frontend dependencies will be downloaded in 
 pipX.Y install flask-cors
 ```
 in the above code the X.Y represents the python version selected while creating the web app based on flask framework replace it accordingly
+
+### 6. Running the App
+
+- Now come back to the frontend flies again and in news_prediction_app > app > action > prediction.js replace the model_url value with your PythonAnyWhere web app domain name string which will look like
+```
+  https://<username>.pythonanywhere.com/prediction
+```
+just need to replace the <username> with your PythonAnyWhere username
+
+🚩 Finally to run the app open the news_prediction_app folder in terminal and run the below command
+```
+npx expo start
+```
+scan the generated QR with Expo Go App (available on PlayStore) make sure the machine running the frontend code and the mobile used to scan are connected to the same router
