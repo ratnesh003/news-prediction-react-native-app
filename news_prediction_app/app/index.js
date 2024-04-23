@@ -4,6 +4,7 @@ import { useRouter } from 'expo-router';
 import { ChevronRight, Newspaper } from 'lucide-react-native';
 
 import styles from '../styles/homePage';
+import { fetchPrediction } from '../action/prediction';
 
 export default function MyForm() {
   const [author, setAuthor] = useState('');
@@ -12,14 +13,18 @@ export default function MyForm() {
 
   const router = useRouter();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    // console.log(data.Author);
+    // router.push({ pathname: "/prediction", params: author  });
+
     const data = {
       Author: author,
       Title: title,
-      Description: description,
-    };
-    console.log(data.Author);
-    router.push({ pathname: "/prediction", params: { author } });
+      Description: description
+    }
+
+    const result = await fetchPrediction(data);
+    router.push(`/prediction/${result}`)
   };
 
   return (
