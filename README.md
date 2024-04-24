@@ -9,7 +9,7 @@ The News Prediction React native App with the Classification ML model deployed o
 - Flask App (**_Back-End_**) 🛢️
 ## Tech Stack
 
-**Client:** React-Native, Expo-Router, StyleSheets, Lucid-react \
+**Client:** React-Native, Expo-Router, StyleSheets, Lucid-react, Axios \
 **Server:** Flask App \
 **Model:** Google Collab, Sickit-learn, NLTK 
 
