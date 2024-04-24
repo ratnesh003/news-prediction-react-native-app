@@ -14,9 +14,6 @@ export default function MyForm() {
   const router = useRouter();
 
   const handleSubmit = async () => {
-    // console.log(data.Author);
-    // router.push({ pathname: "/prediction", params: author  });
-
     const data = {
       Author: author,
       Title: title,
@@ -24,7 +21,7 @@ export default function MyForm() {
     }
 
     const result = await fetchPrediction(data);
-    router.push(`/prediction/${result}`)
+    router.push({ pathname: "/prediction", params:{ result } });
   };
 
   return (
@@ -75,4 +72,4 @@ export default function MyForm() {
 
     </SafeAreaView>
   );
-}
+};
