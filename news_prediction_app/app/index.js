@@ -20,6 +20,11 @@ export default function MyForm() {
       Description: description
     }
 
+    if(!author || !title || !description) {
+      router.push({ pathname: "/error", params:{ author, title, description } });
+      return;
+    }
+
     const result = await fetchPrediction(data);
     router.push({ pathname: "/prediction", params:{ result } });
   };
